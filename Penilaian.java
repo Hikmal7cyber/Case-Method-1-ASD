@@ -1,8 +1,8 @@
 
 class Penilaian {
-    public double nilaiTugas;
-    public double nilaiUTS;
-    public double nilaiUAS;
+     double nilaiTugas;
+     double nilaiUTS;
+     double nilaiUAS;
 
     public Penilaian(double nilaiTugas, double nilaiUTS, double nilaiUAS) {
         this.nilaiTugas = nilaiTugas;
