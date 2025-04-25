@@ -30,6 +30,7 @@ public class Main {
             System.out.println("3. Tampilkan Data Penilaian");
             System.out.println("4. Urutkan Mahasiswa Berdasarkan Nilai Akhir");
             System.out.println("5. Cari Mahasiswa Berdasarkan NIM");
+            System.out.println("7. Update Nilai Tugas");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             int menu = sc.nextInt();
@@ -58,6 +59,7 @@ public class Main {
 
             } else if (menu == 4) {
                 System.out.println("---------- Urutan Nilai ---------- ");
+                
                 Penilaian sorter = new Penilaian(null, null, 0, 0, 0);
                 sorter.selectionSort(arrayPenilaians);
 
@@ -76,15 +78,24 @@ public class Main {
                 int posisi = pencari.sequentialSearch(arrayMhs, cari);
                 pencari.tampilHasilSearch(arrayMhs, cari, posisi);
                 System.out.println();
-                
 
+            } else if (menu == 7) {
+                sc.nextLine(); 
+                System.out.print("Masukkan NIM: ");
+                String nimUpdate = sc.nextLine();
+                System.out.print("Masukkan Nama Mata Kuliah: ");
+                String namaMK = sc.nextLine();
+                System.out.print("Masukkan Nilai Tugas Baru: ");
+                double nilaiBaru = sc.nextDouble();
+                Penilaian.updateNilaiTugas(nimUpdate, namaMK, arrayPenilaians, nilaiBaru);
+                System.out.println();
             } else if (menu == 0) { 
                 break;
-
             } else {
                 System.out.println("xxx Pilihan tidak tersedia, Coba lagi. xxx"); 
                 System.out.println();
             }
+           
         }
 
         System.out.println("Program Dihentikan, Terima Kasih :)");
